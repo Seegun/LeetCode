@@ -6,6 +6,7 @@ https://leetcode.com/problems/coin-change/?envType=study-plan-v2&envId=top-inter
  * @return {number}
  */
 var coinChange = function(coins, amount) {
+    const memo = [];
     function makeChange(remainingAmount, memo) {
         if (remainingAmount === 0) {
             return 0;
@@ -30,6 +31,5 @@ var coinChange = function(coins, amount) {
         return memo[remainingAmount];
     }
 
-    const memo = [];
     return makeChange(amount, memo);
 };
